@@ -6,14 +6,13 @@ read b
 read c
 
 firstOperation=$((a+b*c))
-echo $firstOperation
-
 secondOperation=$((a*b+c))
-echo $secondOperation
-
 thirdOperation=$((c+a/b))
-echo $thirdOperation
+fourthOperation=$((a%b+c))
 
-fouthOperation=$((a%b+c))
-echo $fouthOperation
+declare -A dic
+dic[1]=$firstOperation
+dic[2]=$secondOperation
+dic[3]=$thirdOperation
+dic[4]=$fourthOperation
 
