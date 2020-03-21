@@ -16,3 +16,7 @@ dic[2]=$secondOperation
 dic[3]=$thirdOperation
 dic[4]=$fourthOperation
 
+for i in {1..4}
+do
+	arr[i]=${dic[$i]}
+done
