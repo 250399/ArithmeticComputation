@@ -13,3 +13,7 @@ echo $secondOperation
 
 thirdOperation=$((c+a/b))
 echo $thirdOperation
+
+fouthOperation=$((a%b+c))
+echo $fouthOperation
+
