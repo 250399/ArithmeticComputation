@@ -20,14 +20,24 @@ sort () {
 	local pi=${arr[$high]}
 	for ((i=$low;i<$high;i++))
 	do
-		if [ ${arr[$i]} -gt $pi ]
+		if [ $orderedFlag -eq 0 ]
 		then
-			local temp=${arr[$i]}
-			arr[$i]=${arr[$pindex]}
-			arr[$pindex]=$temp
-			pindex=$((pindex+1))
+			if [ ${arr[$i]} -gt $pi ]
+			then
+				local temp=${arr[$i]}
+				arr[$i]=${arr[$pindex]}
+				arr[$pindex]=$temp
+				pindex=$((pindex+1))
+			fi
+		else
+			if [ ${arr[$i]} -lt $pi ]
+			then
+				local temp=${arr[$i]}
+				arr[$i]=${arr[$pindex]}
+				arr[$pindex]=$temp
+				pindex=$((pindex+1))
+			fi
 		fi
-		
 	done
 	local temp=${arr[$high]}
 	arr[$high]=${arr[$pindex]}
@@ -85,5 +95,9 @@ done
 
 len=${#arr[@]}
 len=$((len-1))
+orderedFlag=0
 quickSort 0 $len ${arr[@]}
 echo "Result in descending order :"${arr[@]}
+orderedFlag=1
+quickSort 0 $len ${arr[@]}
+echo "Result in ascending order :"${arr[@]}
