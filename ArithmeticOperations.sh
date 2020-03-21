@@ -1,3 +1,5 @@
 #!/bin/bash
 
-echo Arithmetic Computation and Sorting
+echo Enter Three Nos 
+read a b c
+
