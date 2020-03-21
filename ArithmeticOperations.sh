@@ -1,5 +1,9 @@
 #!/bin/bash
 
 echo Enter Three Nos 
-read a b c
+read a 
+read b
+read c
 
+firstOperation=$((a+b*c))
+echo $firstOperation
